@@ -1,0 +1,11 @@
+---
+controller_projects:
+  - name: ""
+    description: "Generated bootstrap playbooks"
+    organization: ""
+    scm_type: git
+    scm_url: "https://github.com/jradabau-rh/ado-preflight.git"
+    scm_branch: "main"
+    scm_update_on_launch: false
+    scm_credential: "ocp-gitlab"
+    wait: false

@@ -1,0 +1,33 @@
+---
+- name: Generate Bootstrap Repo and Configure AAP
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    env: "{{ env | default('prod') }}"
+
+    generate_env_vars: true
+    generate_env_vars_force: true
+    bootstrap_generate_env_vars_force: true
+    generate_env_vars_use_aap: true
+    generate_env_vars_encrypt_vault_files: true
+    bootstrap_generate_env_vars_encrypt_vault_files: true
+    bootstrap_generate_env_vars_vault_password_file: "{{ vault_password_file | default('.vault_pass') }}"
+
+    generate_playbooks: true
+    generate_aap_configs: true
+    apply_aap_configs: true
+
+    bootstrap_generate_playbook_repo_git_mode: push
+    bootstrap_generate_playbook_repo_git_url: "{{ generate_playbook_repo_git_url }}"
+    bootstrap_generate_playbook_repo_git_branch: "{{ generate_playbook_repo_git_branch | default(aap_git_branch | default('main')) }}"
+    bootstrap_generate_playbook_repo_git_message: "Generate ADO bootstrap content"
+
+  vars_files:
+    - "group_vars/all/{{ env }}/aap_config_vars.yml"
+    - "group_vars/all/{{ env }}/aap_vault.yml"
+    - "group_vars/all/{{ env }}/vault_machine_cred.yml"
+
+  roles:
+    - role: infra.ado.bootstrap_controller

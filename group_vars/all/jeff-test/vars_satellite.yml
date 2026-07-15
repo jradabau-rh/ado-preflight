@@ -1,0 +1,42 @@
+---
+satellite_config_server_url: https://sat.server.lab
+satellite_config_username: jeff-test
+satellite_config_password: '{{ vault_satellite_service_account_password | default(omit) }}'
+satellite_config_admin_password: '{{ vault_satellite_admin_password | default(vault_satellite_service_account_password | default(omit)) }}'
+satellite_config_organization: Lab
+satellite_config_validate_certs: false
+component_config:
+  satellite:
+    hostname: https://sat.server.lab
+    organization: Lab
+    activation_key: rhel-9
+    service_account_username: jeff-test
+    validate_certs: false
+    dynamic_inventory_enabled: true
+    inventory_source_name: jeff-test Satellite Dynamic Inventory
+    inventory_overwrite: true
+    inventory_overwrite_vars: true
+    inventory_update_on_launch: true
+    inventory_update_cache_timeout: 0
+    inventory_verbosity: 0
+    inventory_host_filter: ''
+    storage: ''
+hostname: https://sat.server.lab
+organization: Lab
+activation_key: rhel-9
+service_account_username: jeff-test
+validate_certs: false
+dynamic_inventory_enabled: true
+inventory_source_name: jeff-test Satellite Dynamic Inventory
+inventory_overwrite: true
+inventory_overwrite_vars: true
+inventory_update_on_launch: true
+inventory_update_cache_timeout: 0
+inventory_verbosity: 0
+inventory_host_filter: ''
+storage: ''
+components_env:
+  satellite:
+    hostname: https://sat.server.lab
+satellite_activation_key: rhel-9
+satellite_service_account_username: jeff-test

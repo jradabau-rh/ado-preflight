@@ -1,0 +1,121 @@
+{
+  "scm_tool": "github",
+  "environment": "jeff-test",
+  "domain": "prod.rhlab",
+  "ansible": {
+    "verbosity": 0
+  },
+  "git": {
+    "auto_push": true,
+    "token": "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"
+  },
+  "components": [
+    "satellite"
+  ],
+  "component_apps": {
+    "openshift": [],
+    "rhel": [],
+    "patching": [],
+    "provision": []
+  },
+  "component_config": {
+    "satellite": {
+      "hostname": "https://sat.server.lab",
+      "organization": "Lab",
+      "activation_key": "rhel-9",
+      "service_account_username": "jeff-test",
+      "service_account_password": "Passw0rd",
+      "admin_password": "knuckle",
+      "validate_certs": false,
+      "dynamic_inventory_enabled": true,
+      "credential_name": "jeff-test",
+      "inventory_source_name": "jeff-test Satellite Dynamic Inventory",
+      "inventory_overwrite": true,
+      "inventory_overwrite_vars": true,
+      "inventory_update_on_launch": true,
+      "inventory_update_cache_timeout": 0,
+      "inventory_verbosity": 0,
+      "inventory_host_filter": "",
+      "storage": ""
+    }
+  },
+  "component_options": {
+    "satellite": [
+      "satellite_server_install",
+      "satellite_client_tools",
+      "satellite_content_view",
+      "satellite_capsule_install"
+    ]
+  },
+  "collections": {
+    "infra_ado": true,
+    "ansible_controller": true,
+    "infra_aap_configuration": true,
+    "infra_controller_configuration": true,
+    "redhat_openshift": true,
+    "kubernetes_core": true,
+    "community_general": true,
+    "containers_podman": true,
+    "ado_bootstrap": true,
+    "ado_openshift": true,
+    "ado_applications": true,
+    "ado_utilities": true,
+    "ado_platform": true
+  },
+  "tools": {
+    "ansible_core": true,
+    "ansible_navigator": true,
+    "git": true,
+    "podman": true,
+    "python": true,
+    "oc": true
+  },
+  "aap": {
+    "enabled": true,
+    "hostname": "https://aap-aap.apps.ocp.prod.rhlab",
+    "version": "26",
+    "organization": "jeff-test",
+    "inventory": "jeff-test-inventory",
+    "project": "jeff-test-project",
+    "git_url": "https://github.com/jradabau-rh/ado-preflight.git",
+    "git_branch": "main",
+    "execution_environment": "ee-supported-rhel9",
+    "vault_credential_name": "jeff-test-vault",
+    "skip_tls_verify": true,
+    "hub_publish_ado_collection": true,
+    "hub_mark_ado_validated": true,
+    "additional_credentials": [],
+    "machine_credential": {
+      "name": "jeff-test-jeff-machine",
+      "username": "cloud-user",
+      "ssh_key_data": "",
+      "ssh_key_unlock": "",
+      "become_method": "sudo",
+      "become_username": "root"
+    },
+    "oauth_token": "aelikO0ATP76wy8Z1L9LliQ4iAOZWt",
+    "admin_username": "admin",
+    "admin_password": "redhat123",
+    "vault_password": "Passw0rd"
+  },
+  "jira": {
+    "enabled": false,
+    "url": "https://example.atlassian.net/",
+    "project_key": "TEST",
+    "custom_ac_field": "customfield_10091",
+    "templates_dir": "templates",
+    "create_subtasks": true,
+    "username": "",
+    "token": ""
+  },
+  "component": "satellite",
+  "selected_component_apps": [
+    "satellite"
+  ],
+  "platform": [
+    "satellite"
+  ],
+  "vault": {
+    "encrypt": true
+  }
+}

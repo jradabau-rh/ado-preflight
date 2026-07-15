@@ -1,0 +1,91 @@
+{
+  "component": "satellite",
+  "components": [
+    "satellite"
+  ],
+  "component_apps": {
+    "openshift": [],
+    "rhel": [],
+    "patching": [],
+    "provision": []
+  },
+  "selected_component_apps": [
+    "satellite"
+  ],
+  "generate_env_vars_component": "satellite",
+  "generate_playbook_repo_component": "satellite",
+  "generate_aap_config_component": "satellite",
+  "generate_env_vars_components": [
+    "satellite"
+  ],
+  "generate_playbook_repo_components": [
+    "satellite"
+  ],
+  "generate_aap_config_components": [
+    "satellite"
+  ],
+  "component_config": {
+    "satellite": {
+      "hostname": "https://sat.server.lab",
+      "organization": "Lab",
+      "activation_key": "rhel-9",
+      "service_account_username": "jeff-test",
+      "service_account_password": "Passw0rd",
+      "admin_password": "knuckle",
+      "validate_certs": false,
+      "dynamic_inventory_enabled": true,
+      "credential_name": "jeff-test",
+      "inventory_source_name": "jeff-test Satellite Dynamic Inventory",
+      "inventory_overwrite": true,
+      "inventory_overwrite_vars": true,
+      "inventory_update_on_launch": true,
+      "inventory_update_cache_timeout": 0,
+      "inventory_verbosity": 0,
+      "inventory_host_filter": "",
+      "storage": ""
+    }
+  },
+  "component_vars": {
+    "satellite": {
+      "hostname": "https://sat.server.lab",
+      "organization": "Lab",
+      "activation_key": "rhel-9",
+      "service_account_username": "jeff-test",
+      "service_account_password": "Passw0rd",
+      "admin_password": "knuckle",
+      "validate_certs": false,
+      "dynamic_inventory_enabled": true,
+      "credential_name": "jeff-test",
+      "inventory_source_name": "jeff-test Satellite Dynamic Inventory",
+      "inventory_overwrite": true,
+      "inventory_overwrite_vars": true,
+      "inventory_update_on_launch": true,
+      "inventory_update_cache_timeout": 0,
+      "inventory_verbosity": 0,
+      "inventory_host_filter": "",
+      "storage": ""
+    }
+  },
+  "component_options": {
+    "satellite": [
+      "satellite_server_install",
+      "satellite_client_tools",
+      "satellite_content_view",
+      "satellite_capsule_install"
+    ]
+  },
+  "machine_credential": {
+    "name": "jeff-test-jeff-machine",
+    "username": "cloud-user",
+    "ssh_key_data": "",
+    "ssh_key_unlock": "",
+    "become_method": "sudo",
+    "become_username": "root"
+  },
+  "git_auto_push": true,
+  "skip_tls_verify": true,
+  "ansible_tls_verify": "false",
+  "ansible_verbosity": 0,
+  "ansible_verbosity_flag": "",
+  "encrypt_vault_files": true
+}
